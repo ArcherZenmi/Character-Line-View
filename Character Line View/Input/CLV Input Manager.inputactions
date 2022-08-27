@@ -1,0 +1,45 @@
+{
+    "name": "CLV Input Manager",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "38168e97-323c-46ef-a16d-4fb4a776fb02",
+            "actions": [
+                {
+                    "name": "Continue",
+                    "type": "Button",
+                    "id": "70e88f13-bed8-455e-8ead-eb76eb7bf348",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "94ff3664-83a4-4219-b234-6a0b532bb17f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Continue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17e62e45-8f8e-4e82-8189-298657b4125c",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Continue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
