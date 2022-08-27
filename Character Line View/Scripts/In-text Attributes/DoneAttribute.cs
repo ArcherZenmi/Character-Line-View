@@ -35,7 +35,9 @@ namespace CharacterLineView
                 // Start this a little later to avoid complications.
                 tweenList.AppendInterval(0.05f);
 
-                tweenList.OnComplete(new TweenCallback(() => clv.UserRequestedViewAdvancement()));
+                // Force the line to skip to the next without user input
+                // Do NOT use OnComplete callback, as it doesn't get called when Complete() is used.
+                tweenList.AppendCallback(new TweenCallback(() => clv.UserRequestedViewAdvancement()));
             }
 
             // Stop parsing more attribute
