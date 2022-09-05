@@ -242,11 +242,11 @@ RectTransform:
   m_Father: {fileID: 5619822243894073509}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 2581, y: 698.18066}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 10}
+  m_SizeDelta: {x: 2583.107, y: 531}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &5619822243068758213
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -451,10 +451,10 @@ RectTransform:
   m_Father: {fileID: 5619822243894073509}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 246.75, y: -123}
-  m_SizeDelta: {x: 1100.64, y: 148.39}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 30, y: 454}
+  m_SizeDelta: {x: 1100.64, y: 148.39001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5619822243965128023
 CanvasRenderer:
@@ -586,10 +586,10 @@ RectTransform:
   m_Father: {fileID: 5619822243894073509}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 339.57, y: -453}
-  m_SizeDelta: {x: 1377.06, y: 368.33}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 128, y: 161}
+  m_SizeDelta: {x: 1377.06, y: 368.32996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5619822244857871529
 CanvasRenderer:
@@ -620,7 +620,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Lorem Ipsum or whatever the heckie it\nwas. Blah Blah Blah Umbreon!\n\u30D6\u30E9\u30C3\u30AD\u30FC
-    -> Blacky. Thanks Pokemon.\nThanks Ameri-, er Japan."
+    -> Blacky. Thanks Pokemon."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bad65f3b304743648efcf38236fcb68, type: 2}
   m_sharedMaterial: {fileID: 6355606092705327786, guid: 9bad65f3b304743648efcf38236fcb68, type: 2}
