@@ -687,38 +687,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2257205561335205093}
     m_Modifications:
-    - target: {fileID: 5619822243068758211, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822243068758211, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822243068758211, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822243068758211, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2583.107
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822243068758211, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 531
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822243068758211, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5619822243894073506, guid: 5345787756f1048959c0680033d86f1a, type: 3}
       propertyPath: m_Name
       value: Character Line View
       objectReference: {fileID: 0}
-    - target: {fileID: 5619822243894073508, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: lineProvider
-      value: 
-      objectReference: {fileID: 9008316736875903262}
     - target: {fileID: 5619822243894073509, guid: 5345787756f1048959c0680033d86f1a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -802,55 +774,6 @@ PrefabInstance:
     - target: {fileID: 5619822243894073509, guid: 5345787756f1048959c0680033d86f1a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822243965128021, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822243965128021, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822243965128021, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 148.39001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822243965128021, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822243965128021, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 454
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822244857871526, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_text
-      value: 'Lorem Ipsum or whatever the heckie it
-
-        was. Blah Blah Blah
-        Umbreon!
-
-        Blacky -> Umbreon. Thanks Pokemon.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822244857871527, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822244857871527, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822244857871527, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 368.32996
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822244857871527, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619822244857871527, guid: 5345787756f1048959c0680033d86f1a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 161
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5345787756f1048959c0680033d86f1a, type: 3}

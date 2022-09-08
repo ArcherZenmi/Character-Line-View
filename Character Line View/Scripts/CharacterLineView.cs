@@ -113,7 +113,7 @@ namespace CharacterLineView
             Tween animateGUI = DOTween.To(
                 () => canvasGroup.alpha,
                 (value) => canvasGroup.alpha = value,
-                0.0f, fadeInTime);
+                0.0f, fadeOutTime);
             CharacterLineViewGlobals.ApplyTweenDefaultSettings(animateGUI);
 
             // Fully show the GUI, so that the full hide effect can be seen
@@ -199,7 +199,7 @@ namespace CharacterLineView
 
             CanvasGroup canvasGroup = gameObject.GetComponent<CanvasGroup>();
 
-            // A tween that slowly hides this gameObject
+            // A tween that slowly shows this gameObject
             Tween animateGUI = DOTween.To(
                 () => canvasGroup.alpha,
                 (value) => canvasGroup.alpha = value,
