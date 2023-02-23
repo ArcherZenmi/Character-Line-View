@@ -23,15 +23,17 @@ namespace CharacterLineView
         // A serializable struct so we can use the inspector
         // to store backgrounds with their associated character's name.
         [Serializable]
-        private struct BackgroundImage
+        private class BackgroundImage
         {
-            public string name;
+            public string characterName;
 
             public Sprite image;
         }
 
         [SerializeField]
-        private BackgroundImage[] backgrounds;
+        private Sprite defaultBackground;
+        [SerializeField]
+        private BackgroundImage[] characterSpecificBackgrounds;
 
         private Dictionary<string, Sprite> backgroundsDict;
         private Image imageComponent;
@@ -44,8 +46,8 @@ namespace CharacterLineView
         {
             // Create the dictionary of backgrounds/dialogue boxes associated with each characters name
             backgroundsDict = new Dictionary<string, Sprite>();
-            foreach (BackgroundImage background in backgrounds)
-                backgroundsDict.Add(background.name, background.image);
+            foreach (BackgroundImage background in characterSpecificBackgrounds)
+                backgroundsDict.Add(background.characterName, background.image);
 
             // Find the image component of this GameObject
             imageComponent = GetComponent<Image>();
@@ -60,16 +62,23 @@ namespace CharacterLineView
         {
             string character = dialogueLine.CharacterName;
 
-            // Error case: A background may not be defined for the character
-            if (!backgroundsDict.ContainsKey(character))
+            // If the current talking character has a special background, display it
+            if (backgroundsDict.ContainsKey(character))
             {
-                Debug.LogWarning($"The character \"{character}\" does not have an " +
-                    $"associated character background.");
+                imageComponent.sprite = backgroundsDict[character];
                 return;
             }
 
-            // Display the background image for the current talking character
-            imageComponent.sprite = backgroundsDict[character];
+            // Otherwise, if a default background exists, use it
+            else if (defaultBackground != null)
+            {
+                imageComponent.sprite = defaultBackground;
+                return;
+            }
+
+            // Error case: No default background nor character background is defined
+            Debug.LogWarning("No default background exists to display, " +
+                        $"& the character \"{character}\" does not have a character background.");
         }
     }
 }
