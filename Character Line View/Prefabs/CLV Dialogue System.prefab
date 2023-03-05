@@ -836,6 +836,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2257205561335205093}
     m_Modifications:
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: defaultBackground
+      value: 
+      objectReference: {fileID: 21300000, guid: a63bb0106ec034454b1d388b43046b15, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[0].image
+      value: 
+      objectReference: {fileID: 21300000, guid: c63bf1ea89bf845eda06fe143dc3e686, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[1].image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4da5c6ceb1b124cc58008a1ec9f1cc65, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[2].image
+      value: 
+      objectReference: {fileID: 21300000, guid: d9777c9d80e34488286e139a3305c8f7, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[3].image
+      value: 
+      objectReference: {fileID: 21300000, guid: ec6abdd7d6115476ab942e56dc7d25ee, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[4].image
+      value: 
+      objectReference: {fileID: 21300000, guid: bc5b6e97b06f143debb6e7cf230ee14e, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[0].characterName
+      value: Flareon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[1].characterName
+      value: Jolteon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[2].characterName
+      value: Vaporeon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[3].characterName
+      value: Glaceon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[4].characterName
+      value: Sylveon
+      objectReference: {fileID: 0}
     - target: {fileID: 5619822243894073506, guid: 5345787756f1048959c0680033d86f1a, type: 3}
       propertyPath: m_Name
       value: Character Line View

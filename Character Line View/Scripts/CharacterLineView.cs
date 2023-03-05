@@ -31,7 +31,7 @@ namespace CharacterLineView
 {
     public class CharacterLineView : DialogueViewBase
     {
-        public TextMeshProUGUI characterNameText;
+        public NameTextBox nameText;
         public CharacterVoices characterVoices;
         public TextLineProvider lineProvider;
         public TextMeshProUGUI lineText;
@@ -160,7 +160,7 @@ namespace CharacterLineView
             SeparateInTextCommands(dialogueLine, out yarnLine, out textMeshProLine);
 
             // First, display the textMeshPro lines
-            characterNameText.text = dialogueLine.CharacterName;
+            nameText.ChangeName(dialogueLine.CharacterName);
             lineText.text = textMeshProLine;
             lineText.ForceMeshUpdate(); // Forcing an update here removes possible errors further down the pipeline
 
@@ -394,23 +394,6 @@ namespace CharacterLineView
 
             return;
         }
-
-
-        // THIS METHOD IS DEPRACATED, as disabling a whole input action may have undesired side-effects.
-        /// <summary>
-        /// Alters whether the player can/can't interact with this dialogue box.
-        /// </summary>
-        //private void SetInteractable(bool interactable)
-        //{
-        //    // Enable/Disable the Input Action that's used to activate the dialogue box
-        //    // Reference: https://docs.unity3d.com/Packages/com.unity.inputsystem@0.1/api/UnityEngine.Experimental.Input.InputActionReference.html
-        //    DialogueAdvanceInput dai = gameObject.GetComponent<DialogueAdvanceInput>();
-
-        //    if(interactable)
-        //        dai.continueActionReference.action.Enable();
-        //    else
-        //        dai.continueActionReference.action.Disable();
-        //}
 
 
         /// <summary>
