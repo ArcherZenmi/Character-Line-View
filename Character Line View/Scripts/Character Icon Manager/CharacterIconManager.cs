@@ -27,6 +27,8 @@ namespace CharacterLineView
 {
     public class CharacterIconManager : MonoBehaviour, ICharacterDisplayable
     {
+        public bool disableCharacterIcons = false;
+
         private Dictionary<string, GameObject> characters;
         private string currentCharacter;
 
@@ -62,6 +64,11 @@ namespace CharacterLineView
         /// </summary>
         public void SetDisplayable(LocalizedLine dialogueLine)
         {
+            // Edge Case: Character icons are disabled
+            if (disableCharacterIcons)
+                return;
+
+            // Find the character's name
             string newCharacter = dialogueLine.CharacterName;
 
             // Error Case: The character doesn't exist
