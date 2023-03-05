@@ -14,9 +14,11 @@
 ///    
 /// </summary>
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using Yarn.Markup;
 
@@ -25,15 +27,18 @@ namespace CharacterLineView
     public class FastAttribute : IIntextAttribute
     {
         /// <inheritdoc/>
-        public bool RunAttributeCommand(CharacterLineView clv, MarkupAttribute attribute, ref Sequence tweenList, ref int currentCps)
+        public bool RunAttributeCommand(TextMeshProUGUI textComponent, MarkupAttribute attribute, ref Sequence tweenList,
+                ref int currentCps, int defaultCps,
+                CharacterVoices characterVoices,
+                Action requestViewAdvancement)
         {
             // Create a new tween with the old settings
             Sequence temp = DOTween.Sequence().SetAs(tweenList);
             tweenList.Kill();
             tweenList = temp;
 
-            // Force the CharacterLineView to begin displaying from the current position
-            clv.lineText.maxVisibleCharacters = attribute.Position;
+            // Force the text to begin displaying from the current position
+            textComponent.maxVisibleCharacters = attribute.Position;
 
             // Continue to parse attribute
             return true;

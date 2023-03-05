@@ -79,12 +79,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5619822243894073509}
-  m_RootOrder: 4
+  m_Father: {fileID: 5619822244857871527}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -257.99997, y: 660.2943}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &5619822242879101636
@@ -344,7 +344,6 @@ RectTransform:
   - {fileID: 4405462861107888583}
   - {fileID: 5619822243965128021}
   - {fileID: 5619822244857871527}
-  - {fileID: 5619822242879101639}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -365,10 +364,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d82c6ecb5d704a3e9f9f8785fec28aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 1975724868669581010}
+  nameTextBox: {fileID: 1975724868669581010}
   characterVoices: {fileID: 5619822242879101638}
   lineProvider: {fileID: 0}
-  lineText: {fileID: 5619822244857871526}
+  textBox: {fileID: 7372798212710005301}
   fadeInTime: 0.75
   fadeOutTime: 0.75
 --- !u!114 &5619822243894073510
@@ -565,7 +564,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac8ef75b38ab4a949eb0e7914277f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameAndTags: []
+  nameAndTags:
+  - yarnScriptTag: Flareon
+    displayedName: Flareon
+  - yarnScriptTag: Jolteon
+    displayedName: Jolteon
+  - yarnScriptTag: Vaporeon
+    displayedName: Vaporeon
+  - yarnScriptTag: Glaceon
+    displayedName: Glaceon
+  - yarnScriptTag: Sylveon
+    displayedName: Sylveon
 --- !u!1 &5619822244857871524
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +586,7 @@ GameObject:
   - component: {fileID: 5619822244857871527}
   - component: {fileID: 5619822244857871529}
   - component: {fileID: 5619822244857871526}
+  - component: {fileID: 7372798212710005301}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -595,7 +605,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5619822242879101639}
   m_Father: {fileID: 5619822243894073509}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -706,3 +717,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7372798212710005301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619822244857871524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f95f8f879a64ddab3b2d7edb61c271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterVoices: {fileID: 5619822242879101638}

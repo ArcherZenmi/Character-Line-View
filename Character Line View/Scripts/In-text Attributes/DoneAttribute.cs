@@ -18,6 +18,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using Yarn.Markup;
 
@@ -26,7 +27,10 @@ namespace CharacterLineView
     public class DoneAttribute : IIntextAttribute
     {
         /// <inheritdoc/>
-        public bool RunAttributeCommand(CharacterLineView clv, MarkupAttribute attribute, ref Sequence tweenList, ref int currentCps)
+        public bool RunAttributeCommand(TextMeshProUGUI textComponent, MarkupAttribute attribute, ref Sequence tweenList,
+                ref int currentCps, int defaultCps,
+                CharacterVoices characterVoices,
+                Action requestViewAdvancement)
         {
             // Check if nw attribute is added
             // If so, line should be dismissed at the end of the animation.
@@ -37,7 +41,7 @@ namespace CharacterLineView
 
                 // Force the line to skip to the next without user input
                 // Do NOT use OnComplete callback, as it doesn't get called when Complete() is used.
-                tweenList.AppendCallback(new TweenCallback(() => clv.UserRequestedViewAdvancement()));
+                tweenList.AppendCallback(new TweenCallback(() => requestViewAdvancement.Invoke()));
             }
 
             // Stop parsing more attribute

@@ -14,9 +14,11 @@
 ///    
 /// </summary>
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using Yarn.Markup;
 
@@ -27,7 +29,10 @@ namespace CharacterLineView
         private const string ATTRIBUTE_NAME = "w";
 
         /// <inheritdoc/>
-        public bool RunAttributeCommand(CharacterLineView clv, MarkupAttribute attribute, ref Sequence tweenList, ref int currentCps)
+        public bool RunAttributeCommand(TextMeshProUGUI textComponent, MarkupAttribute attribute, ref Sequence tweenList,
+                ref int currentCps, int defaultCps,
+                CharacterVoices characterVoices,
+                Action requestViewAdvancement)
         {
             // Error Case: The w property may not be specified
             if(!attribute.Properties.ContainsKey(ATTRIBUTE_NAME))
@@ -53,13 +58,13 @@ namespace CharacterLineView
             }
 
             // Temporarily stop the character's voice
-            tweenList.AppendCallback(new TweenCallback(() => clv.characterVoices.StopVoice()));
+            tweenList.AppendCallback(new TweenCallback(() => characterVoices.StopVoice()));
 
             // Pause the line's type-writer animation for the attribute's specified time
             tweenList.AppendInterval(waitTime);
 
             // After the pause, re-start the character's voice
-            tweenList.AppendCallback(new TweenCallback(() => clv.characterVoices.PlayVoice()));
+            tweenList.AppendCallback(new TweenCallback(() => characterVoices.PlayVoice()));
 
             // Continue to parse commands
             return true;
