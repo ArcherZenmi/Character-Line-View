@@ -40,7 +40,10 @@ namespace CharacterLineView
         {
             // Find component
             textComponent = GetComponent<TextMeshProUGUI>();
+
+            // Empty out the component
             textComponent.text = String.Empty;
+            textComponent.maxVisibleCharacters = 0;
 
             // Do an illegal, and initialize yarnScriptParser
             yarnScriptParser = new Dialogue(new InMemoryVariableStorage());
@@ -63,7 +66,7 @@ namespace CharacterLineView
 
             // Set the text to display
             textComponent.text = textMeshProLine;
-            //textComponent.ForceMeshUpdate(); // Forcing an update here removes possible errors further down the pipeline
+            textComponent.ForceMeshUpdate(); // Forcing an update here allows the text to sync properly with voices
 
             // Second, extract the markUp from the yarn lines
             MarkupParseResult markUp = ExtractMarkup(yarnLine);

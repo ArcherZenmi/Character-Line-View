@@ -32,7 +32,6 @@ namespace CharacterLineView
     public class CharacterLineView : DialogueViewBase
     {
         public NameTextBox nameTextBox;
-        public CharacterVoices characterVoices;
         public TextLineProvider lineProvider;
         public TextBox textBox;
 
@@ -125,7 +124,9 @@ namespace CharacterLineView
         /// <param name="onDialogueLineFinished"> A callback once the dialogue has finished presenting. </param>
         public override void InterruptLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
         {
-            textBox.CompleteAnimation();
+            // Interrupt any text animations
+            if(textBox.IsPlaying())
+                textBox.CompleteAnimation();
 
             onDialogueLineFinished();
         }
@@ -153,7 +154,7 @@ namespace CharacterLineView
                 Sequence sequence = DOTween.Sequence();
                 CharacterLineViewGlobals.ApplyTweenDefaultSettings(sequence);
                 sequence.AppendInterval(delayTime);
-                sequence.AppendCallback(new TweenCallback(
+                sequence.OnComplete(new TweenCallback(
                     () => textBox.AnimateAndDisplay(dialogueLine, CharacterLineViewGlobals.defaultCpsDict[lineProvider.textLanguageCode], UserRequestedViewAdvancement)
                 ));
                 sequence.Play();
