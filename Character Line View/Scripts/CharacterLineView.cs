@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using Yarn;
 using Yarn.Markup;
 using Yarn.Unity;
@@ -37,6 +38,8 @@ namespace CharacterLineView
 
         public float fadeInTime;
         public float fadeOutTime;
+
+        public UnityEvent DialogueClosed;
 
         // True when dialogue box is hidden/uninteractable, false when shown/interactable.
         private bool Hidden
@@ -64,7 +67,16 @@ namespace CharacterLineView
         public override void DialogueComplete()
         {
             // Hide the dialogue view, as it will no longer be used.
-            Hide();
+            float delayTime = Hide();
+
+            // Send an event once the view is completely hidden
+            Sequence sequence = DOTween.Sequence();
+            CharacterLineViewGlobals.ApplyTweenDefaultSettings(sequence);
+            sequence.AppendInterval(delayTime);
+            sequence.AppendCallback(new TweenCallback(
+                () => DialogueClosed.Invoke()
+            ));
+            sequence.Play();
         }
 
 
@@ -89,7 +101,7 @@ namespace CharacterLineView
         public float Hide()
         {
             // Edge Case: Dialogue is already hidden
-            if(Hidden)
+            if (Hidden)
             {
                 Debug.Log("The Character Line View Gameobject is already hidden. The call to Hide() will be skipped.");
                 return 0.0f;
@@ -125,7 +137,7 @@ namespace CharacterLineView
         public override void InterruptLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
         {
             // Interrupt any text animations
-            if(textBox.IsPlaying())
+            if (textBox.IsPlaying())
                 textBox.CompleteAnimation();
 
             onDialogueLineFinished();
