@@ -76,7 +76,7 @@ namespace CharacterLineView
         /// Sets this Character's sprite according to the given emotion.
         /// </summary>
         /// <param name="emotionName"> The name of the emotion. </param>
-        [YarnCommand("Emotion")]
+        [YarnCommand("emotion")]
         public void ChangeEmotion(String emotionName)
         {
             // Error Case: Emotion is undefined.
@@ -96,7 +96,7 @@ namespace CharacterLineView
         /// </summary>
         /// <param name="positionName"> Name of the position to move to. </param>
         /// <param name="time"> How long the move should take. </param>
-        [YarnCommand("Move")]
+        [YarnCommand("move")]
         public void Move(String positionName, float time = 0.5f)
         {
             // Error Case: Specified position is undefined.
