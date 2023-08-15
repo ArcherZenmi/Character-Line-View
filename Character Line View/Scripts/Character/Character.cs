@@ -68,7 +68,7 @@ namespace CharacterLineView
             // Unpack the character's positions to move to
             positionsDict = new Dictionary<string, CharacterPosition>();
             foreach (CharacterPosition pos in positions)
-                positionsDict[pos.name] = pos;
+                positionsDict[pos.name.ToLower()] = pos;
         }
 
 
