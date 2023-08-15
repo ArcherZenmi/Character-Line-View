@@ -41,7 +41,7 @@ namespace CharacterLineView
         /// <param name="musicName"> The new music to play. </param>
         /// <param name="fadeIn"> How many seconds to fade in the volume for the new music. </param>
         /// <param name="fadeOut"> How many seconds to fade out the volume for the old music. </param>
-        [YarnCommand("MusicNew")]
+        [YarnCommand("music_new")]
         public static void MusicNew(string musicName, float fadeIn = 0.0f, float fadeOut = 0.0f)
         {
             // Error case: No handler exists set.
@@ -58,7 +58,7 @@ namespace CharacterLineView
         /// Resume music if it's paused.
         /// </summary>
         /// <param name="fadeIn"> How many seconds to fade in the volume for. </param>
-        [YarnCommand("MusicResume")]
+        [YarnCommand("music_resume")]
         public static void MusicResume(float fadeIn = 0.0f)
         {
             // Error case: No handler exists set.
@@ -75,7 +75,7 @@ namespace CharacterLineView
         /// Pauses the music.
         /// </summary>
         /// <param name="fadeOut"> How many seconds to fade out the volume for. </param>
-        [YarnCommand("MusicPause")]
+        [YarnCommand("music_pause")]
         public static void MusicPause(float fadeOut = 0.0f)
         {
             // Error case: No handler exists set.
