@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb859ed94537a4a64ac82364d43ca51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableCharacterIcons: 1
 --- !u!1 &5619822242879101637
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,11 +366,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameTextBox: {fileID: 1975724868669581010}
-  characterVoices: {fileID: 5619822242879101638}
   lineProvider: {fileID: 0}
   textBox: {fileID: 7372798212710005301}
   fadeInTime: 0.75
   fadeOutTime: 0.75
+  DialogueClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5619822243894073510
 MonoBehaviour:
   m_ObjectHideFlags: 0
