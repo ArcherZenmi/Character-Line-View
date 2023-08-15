@@ -31,9 +31,9 @@ namespace CharacterLineView
         [Serializable]
         private struct DictElement<TKey, TValue>
         {
-            public TKey key;
+            public TKey name;
 
-            public TValue data;
+            public TValue audioClip;
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace CharacterLineView
             // Convert the array of music pieces to a dictionary
             musicDict = new Dictionary<string, AudioClip>();
             foreach (DictElement<string, AudioClip> music in musicList)
-                musicDict.Add(music.key, music.data);
+                musicDict.Add(music.name, music.audioClip);
 
             // Create an empty Sequence
             audioFader = DOTween.Sequence();
