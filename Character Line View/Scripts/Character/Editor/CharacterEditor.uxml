@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <uie:PropertyField binding-path="emotions" />
+    <uie:PropertyField binding-path="positions" />
+</ui:UXML>
