@@ -10,7 +10,7 @@
 ///     CharacterLineView is a LineView that allows for...
 ///     1) In-text commands specify pauses, cps, and other stuff for the dialogue
 ///         (this also supports RichText simultaneously)
-///     2) Changing backgrounds for whatever character is speaking
+///     2) Changing textboxes for whatever character is speaking
 ///     3) Icons w/ emotions displayed alongside a character
 ///     4) A looping "voice" effect to play for each character while they speak
 ///    
