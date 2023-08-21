@@ -556,6 +556,7 @@ Transform:
   - {fileID: 9088232864693515274}
   - {fileID: 9008316736875903257}
   - {fileID: 3238978243934152955}
+  - {fileID: 8687972465485452233}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -756,6 +757,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a38deed2678da4e398205a9fb28f5959, type: 3}
+--- !u!1001 &5120360357364065923
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5849828698369628399}
+    m_Modifications:
+    - target: {fileID: 2193228121087737608, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_Name
+      value: Music Handler
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+--- !u!4 &8687972465485452233 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4584326254551889226, guid: bacee6f04f0f14f0cae42cc80397f386, type: 3}
+  m_PrefabInstance: {fileID: 5120360357364065923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8260702992411940696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -836,6 +899,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2257205561335205093}
     m_Modifications:
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: defaultBackground
+      value: 
+      objectReference: {fileID: 21300000, guid: a63bb0106ec034454b1d388b43046b15, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[0].image
+      value: 
+      objectReference: {fileID: 21300000, guid: c63bf1ea89bf845eda06fe143dc3e686, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[1].image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4da5c6ceb1b124cc58008a1ec9f1cc65, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[2].image
+      value: 
+      objectReference: {fileID: 21300000, guid: d9777c9d80e34488286e139a3305c8f7, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[3].image
+      value: 
+      objectReference: {fileID: 21300000, guid: ec6abdd7d6115476ab942e56dc7d25ee, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[4].image
+      value: 
+      objectReference: {fileID: 21300000, guid: bc5b6e97b06f143debb6e7cf230ee14e, type: 3}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[0].characterName
+      value: Flareon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[1].characterName
+      value: Jolteon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[2].characterName
+      value: Vaporeon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[3].characterName
+      value: Glaceon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619822243068758212, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: characterSpecificBackgrounds.Array.data[4].characterName
+      value: Sylveon
+      objectReference: {fileID: 0}
     - target: {fileID: 5619822243894073506, guid: 5345787756f1048959c0680033d86f1a, type: 3}
       propertyPath: m_Name
       value: Character Line View

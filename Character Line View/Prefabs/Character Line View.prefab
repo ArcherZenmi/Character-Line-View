@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb859ed94537a4a64ac82364d43ca51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableCharacterIcons: 0
 --- !u!1 &5619822242879101637
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,12 +80,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5619822243894073509}
-  m_RootOrder: 4
+  m_Father: {fileID: 5619822244857871527}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -257.99997, y: 660.2943}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &5619822242879101636
@@ -221,7 +222,7 @@ GameObject:
   - component: {fileID: 5619822243068758210}
   - component: {fileID: 5619822243068758212}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Textbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,19 +298,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1a37ffa423c4c9a938b4d7c5100832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgrounds:
-  - name: Jolteon
-    image: {fileID: 21300000, guid: 4da5c6ceb1b124cc58008a1ec9f1cc65, type: 3}
-  - name: Vaporeon
-    image: {fileID: 21300000, guid: d9777c9d80e34488286e139a3305c8f7, type: 3}
-  - name: Glaceon
-    image: {fileID: 21300000, guid: ec6abdd7d6115476ab942e56dc7d25ee, type: 3}
-  - name: Flareon
+  defaultBackground: {fileID: 21300000, guid: a63bb0106ec034454b1d388b43046b15, type: 3}
+  characterSpecificBackgrounds:
+  - characterName: Flareon
     image: {fileID: 21300000, guid: c63bf1ea89bf845eda06fe143dc3e686, type: 3}
-  - name: Sylveon
+  - characterName: Jolteon
+    image: {fileID: 21300000, guid: 4da5c6ceb1b124cc58008a1ec9f1cc65, type: 3}
+  - characterName: Vaporeon
+    image: {fileID: 21300000, guid: d9777c9d80e34488286e139a3305c8f7, type: 3}
+  - characterName: Glaceon
+    image: {fileID: 21300000, guid: ec6abdd7d6115476ab942e56dc7d25ee, type: 3}
+  - characterName: Sylveon
     image: {fileID: 21300000, guid: bc5b6e97b06f143debb6e7cf230ee14e, type: 3}
-  - name: ???
-    image: {fileID: 21300000, guid: a63bb0106ec034454b1d388b43046b15, type: 3}
 --- !u!1 &5619822243894073506
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +345,6 @@ RectTransform:
   - {fileID: 4405462861107888583}
   - {fileID: 5619822243965128021}
   - {fileID: 5619822244857871527}
-  - {fileID: 5619822242879101639}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -366,12 +365,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d82c6ecb5d704a3e9f9f8785fec28aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterNameText: {fileID: 5619822243965128020}
-  characterVoices: {fileID: 5619822242879101638}
+  nameTextBox: {fileID: 1975724868669581010}
   lineProvider: {fileID: 0}
-  lineText: {fileID: 5619822244857871526}
+  textBox: {fileID: 7372798212710005301}
   fadeInTime: 0.75
   fadeOutTime: 0.75
+  DialogueClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5619822243894073510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,8 +430,9 @@ GameObject:
   - component: {fileID: 5619822243965128021}
   - component: {fileID: 5619822243965128023}
   - component: {fileID: 5619822243965128020}
+  - component: {fileID: 1975724868669581010}
   m_Layer: 5
-  m_Name: Character Name
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -553,6 +555,29 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1975724868669581010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619822243965128018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac8ef75b38ab4a949eb0e7914277f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameAndTags:
+  - yarnScriptTag: Flareon
+    displayedName: Flareon
+  - yarnScriptTag: Jolteon
+    displayedName: Jolteon
+  - yarnScriptTag: Vaporeon
+    displayedName: Vaporeon
+  - yarnScriptTag: Glaceon
+    displayedName: Glaceon
+  - yarnScriptTag: Sylveon
+    displayedName: Sylveon
 --- !u!1 &5619822244857871524
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +589,7 @@ GameObject:
   - component: {fileID: 5619822244857871527}
   - component: {fileID: 5619822244857871529}
   - component: {fileID: 5619822244857871526}
+  - component: {fileID: 7372798212710005301}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -582,7 +608,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5619822242879101639}
   m_Father: {fileID: 5619822243894073509}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -693,3 +720,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7372798212710005301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619822244857871524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f95f8f879a64ddab3b2d7edb61c271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterVoices: {fileID: 5619822242879101638}

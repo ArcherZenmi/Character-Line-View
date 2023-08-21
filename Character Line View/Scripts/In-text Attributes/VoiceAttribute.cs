@@ -23,9 +23,11 @@
 ///    
 /// </summary>
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using Yarn.Markup;
 
@@ -38,7 +40,10 @@ namespace CharacterLineView
         /// Used to alter how the character's voice is played.
         /// "default" plays the voice at normal speed, "speed" specifies how many voice clips to play per second (integer).
         /// </summary>
-        public bool RunAttributeCommand(CharacterLineView clv, MarkupAttribute attribute, ref Sequence tweenList, ref int currentCps)
+        public bool RunAttributeCommand(TextMeshProUGUI textComponent, MarkupAttribute attribute, ref Sequence tweenList,
+                ref int currentCps, int defaultCps,
+                CharacterVoices characterVoices,
+                Action requestViewAdvancement)
         {
             // Edge Case: If the voice command is at the start of the line, start the voice a little later
             // to avoid conflicting with initialization
@@ -49,7 +54,7 @@ namespace CharacterLineView
             if(attribute.Properties.ContainsKey("default"))
             {
                 tweenList.AppendCallback(new TweenCallback(
-                    () => clv.characterVoices.PlayVoice()));
+                    () => characterVoices.PlayVoice()));
 
                 return true;
             }
@@ -68,7 +73,7 @@ namespace CharacterLineView
                 else
                 {
                     tweenList.AppendCallback(new TweenCallback(
-                        () => clv.characterVoices.PlayVoiceTimer(attribute.Properties["speed"].IntegerValue)));
+                        () => characterVoices.PlayVoiceTimer(attribute.Properties["speed"].IntegerValue)));
                 }
 
                 return true;
@@ -88,7 +93,7 @@ namespace CharacterLineView
                 {
                     bool mute = attribute.Properties["mute"].BoolValue;
                     tweenList.AppendCallback(new TweenCallback(
-                        () => clv.characterVoices.Mute = mute));
+                        () => characterVoices.Mute = mute));
                 }
 
                 return true;

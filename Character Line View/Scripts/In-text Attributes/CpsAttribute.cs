@@ -19,6 +19,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using Yarn.Markup;
 using Yarn.Unity;
@@ -29,14 +30,17 @@ namespace CharacterLineView
     {
         /// <inheritdoc/>
         /// <summary>
-        /// Change the cps (charcters per second) of the displayed text.
+        /// Change the cps (characters per second) of the displayed text.
         /// </summary>
-        public bool RunAttributeCommand(CharacterLineView clv, MarkupAttribute attribute, ref Sequence tweenList, ref int currentCps)
+        public bool RunAttributeCommand(TextMeshProUGUI textComponent, MarkupAttribute attribute, ref Sequence tweenList,
+                ref int currentCps, int defaultCps,
+                CharacterVoices characterVoices,
+                Action requestViewAdvancement)
         {
             // Edge Case: Cps may want to return to the default value
             if(attribute.Properties.ContainsKey("default"))
             {
-                currentCps = CharacterLineViewGlobals.defaultCpsDict[clv.lineProvider.textLanguageCode];
+                currentCps = defaultCps;
                 return true;
             }
 

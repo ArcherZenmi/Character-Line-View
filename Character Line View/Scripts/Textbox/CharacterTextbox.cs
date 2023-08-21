@@ -18,9 +18,9 @@ using Yarn.Unity;
 
 namespace CharacterLineView
 {
-    public class CharacterBackground : MonoBehaviour, ICharacterDisplayable
+    public class CharacterTextbox : MonoBehaviour, ICharacterDisplayable
     {
-        // A serializable struct so we can use the inspector
+        // A serializable class so we can use the inspector
         // to store backgrounds with their associated character's name.
         [Serializable]
         private class BackgroundImage
