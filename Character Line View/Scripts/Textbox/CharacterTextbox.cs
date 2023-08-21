@@ -54,7 +54,6 @@ namespace CharacterLineView
         }
 
 
-        /// <interitdoc/>
         /// <summary>
         /// Change the background image/dialogue box to match the current talking character.
         /// </summary>

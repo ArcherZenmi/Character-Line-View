@@ -58,7 +58,6 @@ namespace CharacterLineView
         }
 
 
-        /// <inheritdoc/>
         /// <summary>
         /// Display the new character icon, as well as their current emotion.
         /// </summary>

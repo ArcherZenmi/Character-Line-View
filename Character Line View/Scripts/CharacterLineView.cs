@@ -159,8 +159,7 @@ namespace CharacterLineView
             // Activate any changes to the GUI that child objects may want to do
             UpdateChildren(dialogueLine);
 
-            // Display all text
-            nameTextBox.ChangeName(dialogueLine.CharacterName);
+            // Display the text
             if (delayTime > 0) // If necessary, animate the text after a delay
             {
                 Sequence sequence = DOTween.Sequence();

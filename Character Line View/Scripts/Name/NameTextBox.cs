@@ -16,10 +16,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Yarn.Unity;
 
 namespace CharacterLineView
 {
-    public class NameTextBox : MonoBehaviour
+    public class NameTextBox : MonoBehaviour, ICharacterDisplayable
     {
         [Serializable]
         private class NameAndTag
@@ -51,10 +52,10 @@ namespace CharacterLineView
         /// <summary>
         /// Change the currently displayed name based on a YarnScript tag.
         /// </summary>
-        public void ChangeName(string yarnTag)
+        public void SetDisplayable(LocalizedLine dialogueLine)
         {
             TextMeshProUGUI textMesh = GetComponent<TextMeshProUGUI>();
-            textMesh.text = namesDict[yarnTag];
+            textMesh.text = namesDict[dialogueLine.CharacterName];
         }
     }
 }
