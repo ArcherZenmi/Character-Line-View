@@ -23,7 +23,7 @@ using Yarn.Unity;
 
 namespace CharacterLineView
 {
-    public class YarnAnimationCommand : MonoBehaviour
+    public class YarnAnimationSingleton : MonoBehaviour
     {
         private static YarnAnimationHandler currentAnimationHandler;
 

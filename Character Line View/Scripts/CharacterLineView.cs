@@ -32,7 +32,6 @@ namespace CharacterLineView
 {
     public class CharacterLineView : DialogueViewBase
     {
-        public NameTextBox nameTextBox;
         public TextLineProvider lineProvider;
         public TextBox textBox;
 

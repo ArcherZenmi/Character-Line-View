@@ -112,7 +112,7 @@ namespace CharacterLineView
         /// </summary>
         public void SetAsCurrentHandler()
         {
-            YarnAnimationCommand.SetCurrentAnimationHandler(this);
+            YarnAnimationSingleton.SetCurrentAnimationHandler(this);
         }
     }
 }
