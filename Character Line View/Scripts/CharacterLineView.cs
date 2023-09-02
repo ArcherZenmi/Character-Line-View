@@ -34,30 +34,9 @@ namespace CharacterLineView
     {
         public TextLineProvider lineProvider;
         public TextBox textBox;
-
-        public float fadeInTime;
-        public float fadeOutTime;
-
+        public YarnDisplayHandler displayHandler;
+        
         public UnityEvent DialogueClosed;
-
-        // True when dialogue box is hidden/uninteractable, false when shown/interactable.
-        private bool Hidden
-        {
-            get;
-            set;
-        }
-
-
-        /// <summary>
-        /// This method is called when this GameObject is loaded into the scene (specifically when the script is first enabled).
-        /// </summary>
-        public void Start()
-        {
-            // Hide the dialogue box so it's uninteractable.
-            Hidden = true;
-            CanvasGroup canvasGroup = gameObject.GetComponent<CanvasGroup>();
-            canvasGroup.alpha = 0.0f;
-        }
 
 
         /// <summary>
@@ -66,7 +45,7 @@ namespace CharacterLineView
         public override void DialogueComplete()
         {
             // Hide the dialogue view, as it will no longer be used.
-            float delayTime = Hide();
+            float delayTime = displayHandler.Hide();
 
             // Send an event once the view is completely hidden
             Sequence sequence = DOTween.Sequence();
@@ -85,44 +64,11 @@ namespace CharacterLineView
         /// <param name="onDismissalComplete"> A callback once the dialogue has been deleted. </param>
         public override void DismissLine(Action onDismissalComplete)
         {
-            // Prepare the textbox for the next character
+            // Prepare the textbox for the next line
             textBox.DismissLine();
 
             // Tell YarnSpinner that we're ready for the next line.
             onDismissalComplete();
-        }
-
-
-        /// <summary>
-        /// Hides this Line View via a fade effect.
-        /// </summary>
-        /// <returns> A float value representing how long this animation/process will take. </returns>
-        public float Hide()
-        {
-            // Edge Case: Dialogue is already hidden
-            if (Hidden)
-            {
-                Debug.Log("The Character Line View Gameobject is already hidden. The call to Hide() will be skipped.");
-                return 0.0f;
-            }
-
-            Hidden = true;
-
-            CanvasGroup canvasGroup = gameObject.GetComponent<CanvasGroup>();
-
-            // A tween that slowly hides this gameObject
-            Tween animateGUI = DOTween.To(
-                () => canvasGroup.alpha,
-                (value) => canvasGroup.alpha = value,
-                0.0f, fadeOutTime);
-            CharacterLineViewGlobals.ApplyTweenDefaultSettings(animateGUI);
-
-            // Fully show the GUI, so that the full hide effect can be seen
-            canvasGroup.alpha = 1.0f;
-
-            animateGUI.Play();
-
-            return animateGUI.Duration();
         }
 
 
@@ -152,8 +98,8 @@ namespace CharacterLineView
         {
             // If the dialogue box isn't displayed, make sure to account for its delay
             float delayTime = 0;
-            if (Hidden)
-                delayTime = Show();
+            if (displayHandler.Hidden)
+                delayTime = displayHandler.Show();
 
             // Activate any changes to the GUI that child objects may want to do
             UpdateChildren(dialogueLine);
@@ -173,39 +119,6 @@ namespace CharacterLineView
                 textBox.AnimateAndDisplay(dialogueLine, CharacterLineViewGlobals.defaultCpsDict[lineProvider.textLanguageCode], UserRequestedViewAdvancement);
         }
 
-        /// <summary>
-        /// Shows this Line View via a fade effect.
-        /// </summary>
-        /// <returns> A float value representing how long this animation/process will take. </returns>
-        public float Show()
-        {
-            // Edge Case: Dialogue is already shown
-            if (!Hidden)
-            {
-                Debug.Log("The Character Line View Gameobject is already shown. The call to Show() will be skipped.");
-                return 0.0f;
-            }
-
-            CanvasGroup canvasGroup = gameObject.GetComponent<CanvasGroup>();
-
-            // A tween that slowly shows this gameObject
-            Tween animateGUI = DOTween.To(
-                () => canvasGroup.alpha,
-                (value) => canvasGroup.alpha = value,
-                1.0f, fadeInTime);
-            CharacterLineViewGlobals.ApplyTweenDefaultSettings(animateGUI);
-
-            // Once the GUI is fully shown, it should become interactable again
-            animateGUI.OnComplete(() => Hidden = false);
-
-            // Fully hide the GUI, so that the full hide effect can be seen
-            canvasGroup.alpha = 0.0f;
-
-            animateGUI.Play();
-
-            return animateGUI.Duration();
-        }
-
 
         /// <summary>
         /// Called by DialogueAdvanceScript whenever the user presses space, or some equivalent.
@@ -214,7 +127,7 @@ namespace CharacterLineView
         public override void UserRequestedViewAdvancement()
         {
             // If no line is currently being processed, skip this call
-            if (Hidden)
+            if (displayHandler.Hidden)
                 return;
 
             // If the line is still presenting, skip to the end.

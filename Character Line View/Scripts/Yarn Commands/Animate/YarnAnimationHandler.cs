@@ -28,9 +28,6 @@ namespace CharacterLineView
         private bool setAsCurrentHandler = false;
 
         [SerializeField]
-        private CharacterLineView dialogueBox;
-
-        [SerializeField]
         private TimelineAsset[] animationTimelines;
 
         private PlayableDirector animationDirector;
@@ -85,10 +82,6 @@ namespace CharacterLineView
                 animationDirector.Evaluate();
                 animationDirector.Stop(); // This also destroys the internal playable/graph
             }
-
-            // If the command is synchronous, wait for the dialogue box to close
-            if (!async)
-                yield return new WaitForSeconds(dialogueBox.Hide());
 
             // Set the animation and play it.
             animationDirector.playableAsset = animationTimelineDict[animationName];

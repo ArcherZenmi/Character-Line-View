@@ -30,6 +30,7 @@ Transform:
   m_Children:
   - {fileID: 3238978243934152955}
   - {fileID: 8687972465485452233}
+  - {fileID: 6215563949654883010}
   m_Father: {fileID: 5849828698369628399}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -640,6 +641,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDebug: 0
   debugTextView: {fileID: 0}
+--- !u!1 &6646752306279851785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6215563949654883010}
+  - component: {fileID: 7224965045401981079}
+  m_Layer: 0
+  m_Name: Display Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6215563949654883010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6646752306279851785}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.369455, y: -2.0049992, z: 4.761347}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5598903904559975110}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7224965045401981079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6646752306279851785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71ac5a369afb4f1a8f14f3cbe8a83d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setAsCurrentHandler: 1
+  display: {fileID: 3530372228798741518}
+  defaultShowTime: 0.5
+  defaultHideTime: 0.5
 --- !u!1001 &4676426296917870184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -987,6 +1036,10 @@ PrefabInstance:
       propertyPath: lineProvider
       value: 
       objectReference: {fileID: 9008316736875903262}
+    - target: {fileID: 5619822243894073508, guid: 5345787756f1048959c0680033d86f1a, type: 3}
+      propertyPath: displayHandler
+      value: 
+      objectReference: {fileID: 7224965045401981079}
     - target: {fileID: 5619822243894073509, guid: 5345787756f1048959c0680033d86f1a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
