@@ -75,6 +75,44 @@ namespace CharacterLineView
 
 
         /// <summary>
+        /// A "set hide time" command usable when writing Yarn Script.
+        /// </summary>
+        /// <param name="time"> The new default time it takes to hide the display. </param>
+        [YarnCommand("set_hide_display_time")]
+        public static void SetHideTime(float time)
+        {
+            // Error case: No handler was set.
+            if (currentHandler == null)
+            {
+                Debug.LogError("No handler has been set. The \"show_display\" command in Yarnscript cannot run.");
+                return;
+            }
+
+            // Send info
+            currentHandler.SetHideTime(time);
+        }
+
+
+        /// <summary>
+        /// A "set show time" command usable when writing Yarn Script.
+        /// </summary>
+        /// <param name="time"> The new default time it takes to show the display. </param>
+        [YarnCommand("set_show_display_time")]
+        public static void SetShowTime(float time)
+        {
+            // Error case: No handler was set.
+            if (currentHandler == null)
+            {
+                Debug.LogError("No handler has been set. The \"show_display\" command in Yarnscript cannot run.");
+                return;
+            }
+
+            // Send info
+            currentHandler.SetShowTime(time);
+        }
+
+
+        /// <summary>
         /// Set the current handler object that the command will be passed to.
         /// This should not be called directly, rather, it should be called by a handler.
         /// </summary>

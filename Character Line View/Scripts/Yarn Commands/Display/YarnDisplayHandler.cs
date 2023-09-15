@@ -64,12 +64,32 @@ namespace CharacterLineView
                 Debug.LogError("CharacterLineView does not have a CanvasGroup defined.");
 
             // Set this as the main animation handler for YarnScript
-            if(setAsCurrentHandler)
+            if (setAsCurrentHandler)
                 SetAsCurrentHandler();
 
             // In the beginning, the display is hidden
             Hidden = false;
             Hide(0);
+        }
+
+
+        /// <summary>
+        /// A "set hide time" command usable when writing Yarn Script.
+        /// </summary>
+        /// <param name="time"> The new default time it takes to hide the display. </param>
+        public void SetHideTime(float time)
+        {
+            defaultHideTime = time;
+        }
+
+
+        /// <summary>
+        /// A "set show time" command usable when writing Yarn Script.
+        /// </summary>
+        /// <param name="time"> The new default time it takes to show the display. </param>
+        public void SetShowTime(float time)
+        {
+            defaultShowTime = time;
         }
 
 
