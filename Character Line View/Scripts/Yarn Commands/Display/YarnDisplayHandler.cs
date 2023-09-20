@@ -64,7 +64,7 @@ namespace CharacterLineView
                 Debug.LogError("CharacterLineView does not have a CanvasGroup defined.");
 
             // Set this as the main animation handler for YarnScript
-            if (setAsCurrentHandler)
+            if(setAsCurrentHandler)
                 SetAsCurrentHandler();
 
             // In the beginning, the display is hidden
